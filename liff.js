@@ -22,6 +22,7 @@ function createLiff(myLiffId) {
         })
         .then(() => {
             checkLogin()
+            checkClient()
         })
         .catch((err) => {
             document.getElementById("loginPage").classList.add('hidden')
@@ -30,13 +31,23 @@ function createLiff(myLiffId) {
 }
 
 function checkLogin() {
-    if (liff.isLoggedIn()) {
-        assignProfile()
+    if (!liff.isLoggedIn()) {
+        // assignProfile()
         document.getElementById("loginPage").classList.add('hidden')
         document.getElementById("contentPage").classList.remove('hidden')
     } else {
         document.getElementById("loginPage").classList.remove('hidden')
         document.getElementById("contentPage").classList.add('hidden')
+    }
+}
+
+function checkClient() {
+    if (liff.isInClient()) {
+        document.getElementById("logoutButton").classList.add('hidden')
+        document.getElementById("openExternalButton").classList.remove('hidden')
+    } else {
+        document.getElementById("openExternalButton").classList.add('hidden')
+        document.getElementById("logoutButton").classList.remove('hidden')
     }
 }
 

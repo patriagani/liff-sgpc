@@ -77,3 +77,10 @@ function pesanMakanan() {
         });
     }
 }
+
+function openExternal() {
+    liff.openWindow({
+        url: 'https://liff-sgpc.herokuapp.com',
+        external: true
+    });
+}
