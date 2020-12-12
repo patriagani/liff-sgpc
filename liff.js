@@ -31,8 +31,8 @@ function createLiff(myLiffId) {
 }
 
 function checkLogin() {
-    if (!liff.isLoggedIn()) {
-        // assignProfile()
+    if (liff.isLoggedIn()) {
+        assignProfile()
         document.getElementById("loginPage").classList.add('hidden')
         document.getElementById("contentPage").classList.remove('hidden')
     } else {
