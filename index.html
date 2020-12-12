@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Warung Makan - SGPC</title>
 </head>
 <body>
-    <div class="container" style="width: 460px;">
+    <div id="errorPage" class="container hidden" style="width: 460px;">
         <div class="row">
             <h4 style="padding-top: 20px;">Warung Makan - SGPC</h4>
             <br>
             <br>
             <br>
-            <p>Halo Customer, silahkan memilih menu yang tersedia dibawah ini :</p>
+            <p>Halo Customer, terjadi kesalahan LIFF framework tidak dapat diinisialisasi</p>
+        </div>
+        <br>
+    </div>
+    <div id="loginPage" class="container" style="width: 460px;">
+        <div class="row">
+            <h4 style="padding-top: 20px;">Warung Makan - SGPC</h4>
+            <br>
+            <br>
+            <br>
+            <p>Halo Customer, silahkan login terlebih dahulu untuk dapat memilih menu</p>
+            <br>
+            <button class="btn btn-primary" type="button" onclick="liffLogin()">Login</button>
+        </div>
+        <br>
+    </div>
+    <div id="contentPage" class="container hidden" style="width: 460px;">
+        <div class="row">
+            <h4 style="padding-top: 20px;">Warung Makan - SGPC</h4>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+                <img id="profilePicture" src="images/profile.png" alt="profile picture" style="width: 100%; border-radius: 50px;">
+            </div>
+            <div class="col">
+                <p id="customerGreeting">Halo Customer, silahkan memilih menu yang tersedia dibawah ini :</p>
+            </div>
         </div>
         <br>
         <div class="row">
@@ -31,16 +59,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(25,`makanan`, `makanan1`)">+</button>
+                    <button id="makanan1" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(25,`makanan`, `makanan1`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/nasi-rawon.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/nasi-rawon.jpg" alt="nasi rawon" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Nasi Rawon</p>
@@ -49,16 +77,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(25,`makanan`, `makanan2`)">+</button>
+                    <button id="makanan2" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(25,`makanan`, `makanan2`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/nasi-soto.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/nasi-soto.jpg" alt="nasi soto" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Nasi Soto</p>
@@ -67,16 +95,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(25,`makanan`, `makanan3`)">+</button>
+                    <button id="makanan3" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(25,`makanan`, `makanan3`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/mendoan.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/mendoan.jpg" alt="tempe mendoan" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Tempe Mendoan</p>
@@ -85,16 +113,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(5,`makanan`, `makanan4`)">+</button>
+                    <button id="makanan4" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(5,`makanan`, `makanan4`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/sate-usus.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/sate-usus.jpg" alt="sate usus" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Sate Usus</p>
@@ -103,9 +131,9 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(5,`makanan`, `makanan5`)">+</button>
+                    <button id="makanan5" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(5,`makanan`, `makanan5`)">-</button>
                 </div>
             </div>
         </div>
@@ -116,7 +144,7 @@
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/es-jeruk.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/es-jeruk.jpg" alt="es jeruk" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Es Jeruk</p>
@@ -125,16 +153,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(10,`minuman`, `minuman1`)">+</button>
+                    <button id="minuman1" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(10,`minuman`, `minuman1`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/es-teh.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/es-teh.jpg" alt="es teh" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Es Teh</p>
@@ -143,16 +171,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(10,`minuman`, `minuman2`)">+</button>
+                    <button id="minuman2" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(10,`minuman`, `minuman2`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/teh-panas.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/teh-panas.jpg" alt="teh panas" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Teh Panas</p>
@@ -161,16 +189,16 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(10,`minuman`, `minuman3`)">+</button>
+                    <button id="minuman3" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(10,`minuman`, `minuman3`)">-</button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <img src="images/lemon-tea.jpg" alt="nasi pecel" style="width: 95%; border-radius: 20px;">
+                <img src="images/lemon-tea.jpg" alt="lemon tea" style="width: 95%; border-radius: 20px;">
             </div>
             <div class="col-5">
                 <p>Lemon Tea Panas</p>
@@ -179,9 +207,9 @@
             </div>
             <div class="col">
                 <div class="d-grid gap-1 col-6">
-                    <button class="btn btn-primary" type="button">+</button>
-                    <button class="btn btn-secondary" type="button">0</button>
-                    <button class="btn btn-primary" type="button">-</button>
+                    <button class="btn btn-primary" type="button" onclick="tambahMenu(10,`minuman`, `minuman4`)">+</button>
+                    <button id="minuman4" class="btn btn-secondary" type="button">0</button>
+                    <button class="btn btn-primary" type="button" onclick="kurangMenu(10,`minuman`, `minuman4`)">-</button>
                 </div>
             </div>
         </div>
@@ -191,13 +219,19 @@
             <h5>Ringkasan :</h5>
         </div>
         <div class="row">
-            <p style="font-size: 12px;">Total : 2 Makanan dan 2 Minuman</p>
-            <p style="font-size: 12px;">Harga : Rp 70.000</p>
-            <button class="btn btn-primary" type="button">Pesan Sekarang</button>
+            <p id="foodSummary" style="font-size: 12px;">Anda belum memilih menu apapun</p>
+            <p id="priceSummary" style="font-size: 12px;">Harga : Rp 0.000</p>
+            <button class="btn btn-primary" type="button" onclick="pesanMakanan()">Pesan Sekarang</button>
         </div>
         <br>
-        <p class="text-center">Logout</p>
+        <br>
+        <div class="row">
+            <button class="btn btn-secondary" type="button" onclick="liffLogout()">Logout</button>
+        </div>
       </div>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="liff.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
