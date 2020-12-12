@@ -58,7 +58,7 @@ function pesanMakanan() {
     if (!liff.isInClient()) {
         alert("Harap buka aplikasi melalui aplikasi line untuk dapat memesan :)");
     } else {
-        let text = `
+        let textMessage = `
             Anda telah memesan makanan dengan rincian sebagai berikut :
             * ${jumlahMakanan} makanan
             * ${jumlahMinuman} minuman,
@@ -69,7 +69,7 @@ function pesanMakanan() {
 
         liff.sendMessages([{
             'type': 'text',
-            'text': "Anda telah menggunakan fitur Send Message!"
+            'text': textMessage
         }]).then(function() {
             window.alert('Pesanan anda telah terkirim, harap menunggu balasan dari admin');
         }).catch(function(error) {
