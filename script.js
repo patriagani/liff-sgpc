@@ -58,7 +58,7 @@ function pesanMakanan() {
     if (!liff.isInClient()) {
         alert("Harap buka aplikasi melalui aplikasi line untuk dapat memesan :)");
     } else {
-        let textMessage = `Anda telah memesan makanan dengan rincian sebagai berikut :\n* ${jumlahMakanan} makanan\n* ${jumlahMinuman} minuman,\ndengan total harga sebesar : Rp ${totalHarga}.000,-\nMohon ditunggu ya kak :)`
+        let textMessage = `Saya ingin memesan makanan dengan rincian sebagai berikut :\n* ${jumlahMakanan} makanan\n* ${jumlahMinuman} minuman,\ndengan total harga sebesar : Rp ${totalHarga}.000,-\nMohon diproses ya kak :)`
 
         liff.sendMessages([{
             'type': 'text',
@@ -73,7 +73,7 @@ function pesanMakanan() {
 
 function openExternal() {
     liff.openWindow({
-        url: 'https://liff-sgpc.herokuapp.com',
+        url: 'https://liff-sgpc.netlify.app',
         external: true
     });
 }
